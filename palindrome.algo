@@ -1,0 +1,27 @@
+FUNCTION isPalindrome(word, start, end) : BOOLEAN
+VAR
+    
+BEGIN
+    IF (start <> end) then
+        RETURN true ;
+    END_IF
+    IF (word[start] <> word[end] ) then
+        RETURN false
+    END_IF
+    RETURN isPalindrome(word, start +1, end -1)
+END 
+
+
+FUNCTION isPalindromeMain(word): 
+VAR
+    word : STRING ;
+BEGIN
+    IF (word.length === 0) THEN
+        RETURN false 
+END_IF
+result = isPalindrome(word, 0, word.length-1)
+IF (result === true) THEN
+    write("is a palindrme")
+ELSE 
+    write("is not a palindrome")
+END_IF
